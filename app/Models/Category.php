@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class User extends Model
+class Category extends Model
 {
     use HasFactory;
 
@@ -14,6 +15,6 @@ class User extends Model
 
     public function article()
     {
-      return $this->hasMany(Article::class);
+      return $this->hasMany(Article::class, 'category_id');
     }
 }
