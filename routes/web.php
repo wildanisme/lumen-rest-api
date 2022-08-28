@@ -25,6 +25,8 @@ $router->post('/articles/store', 'ArticleController@store');
 $router->put('/articles/update/{id}', 'ArticleController@update');
 $router->delete('/articles/destroy/{id}', 'ArticleController@destroy');
 
+$router->get('/articles/test', 'ArticleController@test');
+
 $router->get('/categories', 'CategoryController@index');
 $router->get('/categories/{id}', 'CategoryController@show');
 $router->post('/categories/store', 'CategoryController@store');

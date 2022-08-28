@@ -22,7 +22,6 @@ class ArticleController extends Controller
     public function index()
     {
       $articles = Article::with('category')->get();
-
       return response()->json([
         'message' => "List Artikel",
         'data' => $articles
@@ -112,5 +111,13 @@ class ArticleController extends Controller
       return response()->json([
         'message' => 'Data berhasil dihapus!'
       ], 200);
+    }
+
+    public function test()
+    {
+      $articles = Article::with('category')->get();
+      $collection = collect($articles);
+      
+      return response()->json($collection);
     }
 }
