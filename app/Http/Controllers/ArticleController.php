@@ -106,7 +106,7 @@ class ArticleController extends Controller
 
     public function destroy($id)
     {
-      $article = Article::find($id);
+      $article = Article::whereId($id);
       $article->delete();
 
       return response()->json([
